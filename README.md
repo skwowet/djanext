@@ -9,7 +9,7 @@ This repo is a django-nextjs web app boiler-plate that is dockerized including N
 - Docker (served in Nginx using gunicorn)
 
 ## Prequistics
-Docker must have been installed, in order to use this boiler-plate code. For downloading the docker check this out - [docker download]()
+Docker must have been installed, in order to use this boiler-plate code. For downloading the docker check this out - [docker download](https://docs.docker.com/get-docker/)
 
 ## Setting up the boiler-plate
 - Clone this repo
