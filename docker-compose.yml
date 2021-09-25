@@ -1,0 +1,76 @@
+version: '3'
+
+services:
+  db:
+    container_name: aquila_pgdb
+    restart: always
+    image: postgres:13-alpine
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
+    networks:
+      - core
+    ports:
+      - 5432:5432
+    volumes:
+      - ./backend/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+  backend:
+    container_name: aquila_backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    command: 
+      # ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+      ["gunicorn", "--bind", ":8000", "backend.wsgi:application"]
+    volumes:
+      - ./backend:/app/backend
+      - /var/run/docker.sock:/var/run/docker.sock
+      - static:/app/backend/static
+    ports:
+      - 8000:8000
+    networks:
+      - core
+    links:
+      - db:db
+  webapp:
+    container_name: aquila_webapp
+    build:
+      context: webapp
+      dockerfile: Dockerfile
+    networks:
+      - core
+    command:
+      "yarn run dev"
+    volumes:
+      - ./webapp:/webapp
+      - /var/run/docker.sock:/var/run/docker.sock
+      - node-modules:/webapp/node_modules
+    ports:
+      - 3000:3000
+    links:
+      - backend:backend
+  nginx:
+    container_name: aquila_nginx
+    image: nginx
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static:/app/backend/static
+    ports:
+      - 80:80
+    links: 
+      - backend
+      - webapp
+    networks:
+      - core
+    command: [nginx-debug, '-g', 'daemon off;']
+
+networks:
+  core:
+
+volumes:
+  node-modules:
+  static:

@@ -1,0 +1,4 @@
+Django==3.2.6
+graphene-django==2.15.0
+psycopg2-binary==2.9.1
+gunicorn==19.9.0

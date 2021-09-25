@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e8cbc0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #636fa4, #e8cbc0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #636fa4, #e8cbc0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    font-family: "poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    border: none;
+    padding: 10px;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+form button {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+form button:hover {
+    background-color: black;
+    color: white;
+}
+
+.todo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_list {
+    list-style: none;
+    min-width: 50%;
+}
+
+.todo {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo_item {
+    border: none;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-right: 10px;
+    background-color: #636fa4;
+}
+
+.todo li {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.completed-btn,
+.trash-btn {
+    border: none;
+    padding: 20px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.completed-btn:hover {
+    background-color: rgb(91, 202, 17);
+    color: white;
+}
+
+.trash-btn:hover {
+    background-color: rgb(241, 26, 26);
+    color: white;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.completed_effect {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(10rem) rotateX(90deg);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.filter-todo {
+    border: none;
+    padding: 18px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    width: 14rem;
+}
+
+.select {
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    content: " \25E2";
+    background-color: rgb(226, 226, 226);
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 5px;
+    font-size: 0.9rem;
+    padding: 20px;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.select:hover::after {
+    color: black;
+    border-bottom-right-radius: 200px;
+}
