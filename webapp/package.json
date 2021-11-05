@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && next start",
+    "lint": "export SET NODE_OPTIONS=--openssl-legacy-provider && next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.13",
+    "graphql": "^15.6.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
