@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    container_name: aquila_pgdb
+    container_name: boiler_pgdb
     restart: always
     image: postgres:13-alpine
     environment: 
@@ -17,7 +17,7 @@ services:
     volumes:
       - ./backend/dump.sql:/docker-entrypoint-initdb.d/dump.sql
   backend:
-    container_name: aquila_backend
+    container_name: boiler_backend
     build:
       context: backend
       dockerfile: Dockerfile
@@ -35,7 +35,7 @@ services:
     links:
       - db:db
   webapp:
-    container_name: aquila_webapp
+    container_name: boiler_webapp
     build:
       context: webapp
       dockerfile: Dockerfile
@@ -52,7 +52,7 @@ services:
     links:
       - backend:backend
   nginx:
-    container_name: aquila_nginx
+    container_name: boiler_nginx
     image: nginx
     build:
       context: nginx

@@ -21,7 +21,7 @@ function BooksList() {
 
   console.log("data", data.books);
 
-  return <h2>Helo world!</h2>;
+  return <h2>Helo {data.books[0].title}</h2>;
 }
 
 export default BooksList;
