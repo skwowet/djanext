@@ -2,7 +2,7 @@ This is a [Django](https://www.djangoproject.com) project bootstrapped with [`dj
 
 ## Django Getting Started
 
-If you already know django then you must have came across this makemigrations and migrate for the models. For doing the same insde, docker use the following command 
+If you already know django then you must have came across this `makemigrations` and `migrate` for the models. For doing the same insde, docker use the following command 
 
 ```bash
 $ docker compose exec backend python manage.py makemigrations

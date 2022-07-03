@@ -9,7 +9,7 @@ The django-nextjs is a full stack web app boiler plate code that is dockerized i
 - Docker (served in Nginx using gunicorn)
 
 ## Prerequisites
-Docker must have been installed, in order to use this boiler-plate code. For downloading the docker check this out - [docker download](https://docs.docker.com/get-docker/)
+Docker must have been installed, in order to use this boiler-plate code. For downloading the docker check out - [docker download](https://docs.docker.com/get-docker/)
 
 ## How to Setup
 To see how to use the boiler plate code, visit [DEVELOPERS.md](DEVELOPERS.md).
