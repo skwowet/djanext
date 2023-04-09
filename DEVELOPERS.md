@@ -7,7 +7,7 @@
 1. Clone this repo
 
 ```bash
-$ git clone https://github.com/yeganathan18/django-nextjs-bioler-plate.git
+$ git clone https://github.com/yeganathan18/djanext.git
 ```
 
 2. Create a virtual environment inside `backend/` and activate it
@@ -18,16 +18,20 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 ```
 
-3. Install the dependencies, run the migrations and start the server
+3. Install the dependencies, run the migrations
 
 ```bash
 $ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate
+```
+
+4. Start the django server
+```bash
 $ python manage.py runserver
 ```
 
-4. Open another terminal and start the nextjs server
+5. Open another terminal and start the nextjs server
 
 ```bash
 $ yarn install
