@@ -2,67 +2,43 @@
 
 - [Building & Starting the dev server](#building-and-starting-the-dev-server)
 - [Navigation](#Navigation)
-- [Miscellaneous](#Miscellaneous)
 
-## Building and Starting the dev server
+## How to start the dev server
 1. Clone this repo
 
 ```bash
 $ git clone https://github.com/yeganathan18/django-nextjs-bioler-plate.git
 ```
 
-2. Start the Docker desktop app (mac & windows) and make sure that the docker-engine is started
+2. Create a virtual environment inside `backend/` and activate it
 
 ```bash
-$ docker info
+$ cd backend
+$ python3 -m venv venv
+$ source venv/bin/activate
 ```
 
-> Using this command check whether the docker engine is running!
-
-
-3. Shot up the terminal and 
+3. Install the dependencies, run the migrations and start the server
 
 ```bash
-$ cd django-nextjs-bioler-plate
+$ pip install -r requirements.txt
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
 ```
 
-Make sure the directory is proper before moving further, it should be `django-nextjs-bioler-plate/` 
-
-4. Build the Docker images
+4. Open another terminal and start the nextjs server
 
 ```bash
-$ docker-compose build
+$ yarn install
+$ yarn dev
 ```
 
-> This may take some time to complete
-
-5. Once the docker container is built,
-
-```bash
-$ docker-compose up
-```
-
-You may see the logs that are running up in the terminal, now the container has been started.
-
-- Step 6: There may be some default migrations that has to be done for the django, so open-up another terminal in the same directory and run the following command.
-
-```bash
-docker compose exec backend python manage.py migrate
-```
-
+Now you are ready to go! If you like this boilerplate, please give it a star ⭐️
 
 ## Navigation
-Webapp - [http://localhost/](http://localhost/)
+Webapp - [http://localhost:3000/](http://localhost:3000/)
 
-Django Admin panel - [http://localhost/api/admin](http://localhost/api/admin)
+Django Admin panel - [http://localhost:8000/api/admin](http://localhost:8000/api/admin)
 
-GraphiQL Playground - [http://localhost/api/graphql](http://localhost/api/graphql)
-
-## Miscellaneous
-Whether to install a package or use a command in particular container run the following code.
-
-```bash
-docker compose exec <container-name> <command that need to be executed>
-```
-
-Check the `README.md` in [webapp](./webapp) and [backend](./backend) directory.
+GraphiQL Playground - [http://localhost:8000/api/graphql](http://localhost:8000/api/graphql)

@@ -32,3 +32,4 @@ webapp/.env.test.local
 
 # vercel
 .vercel
+env/

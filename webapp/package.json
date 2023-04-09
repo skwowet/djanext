@@ -3,20 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && next dev",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && next build",
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && next start",
-    "lint": "export SET NODE_OPTIONS=--openssl-legacy-provider && next lint"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.13",
-    "graphql": "^15.6.0",
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "@apollo/client": "^3.7.11",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "graphql": "^16.6.0",
+    "next": "13.3.0",
+    "postcss": "8.4.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.1",
+    "typescript": "5.0.4"
   }
 }
