@@ -33,3 +33,5 @@ webapp/.env.test.local
 # vercel
 .vercel
 env/
+
+.DS_Store
